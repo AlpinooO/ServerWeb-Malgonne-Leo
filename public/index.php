@@ -6,6 +6,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use App\Controllers\CatalogController;
 use App\Controllers\MainController;
 use App\Controllers\CartController;
+use App\Controllers\BrandController;
 
 // Je créer une instance de AltoRouter (la librairie que j'ai installé)
 $router = new AltoRouter();
@@ -67,6 +68,10 @@ $router->addRoutes(array(
         'controller' => CartController::class,
         'action' => 'checkout'
     ], 'cart-checkout'),
+    array('GET', '/brands', [
+        'controller' => BrandController::class,
+        'action' => 'index'
+    ], 'brand-index'),
     
   ));
 
